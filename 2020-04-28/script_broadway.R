@@ -1,15 +1,20 @@
+# 1.0 SETUP ----
 library(tidyverse)
 library(hrbrthemes)
 library(scales)
 
+# 2.0 IMPORT ----
 grosses <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2020/2020-04-28/grosses.csv', guess_max = 40000)
 
+# 3.0 ANALYSIS ----
+# Summarize data for plot
 top_viewings <- grosses %>% 
   group_by(show) %>%
   summarize(num_seats = sum(seats_sold)) %>%
   arrange(desc(num_seats)) %>%
   top_n(15)
 
+# Create plot
 top_viewings %>%
   ggplot(aes(x = reorder(show, num_seats), y = num_seats)) + 
   geom_col(fill = "#76A8B0") + 
