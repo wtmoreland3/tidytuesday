@@ -1,5 +1,5 @@
 # tidytuesday
-Weekly data visualizations:
+Weekly data visualizations from [R4DS](https://github.com/rfordatascience/tidytuesday) datasets:
 
 **2020-04-28 - Broadway Weekly Grosses**
 ![Top 15 Boradway Shows by Seats Sold](/2020-04-28/plot_broadway.png)
